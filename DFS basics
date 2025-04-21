@@ -1,0 +1,47 @@
+#Basic Algorithms 
+def dfs_recursive(graph,node,visited = None):
+  if visited = None: 
+    visited = set()
+visited.add(node) 
+
+for neighbour in graph[node]: 
+  if neighbour not in visited: 
+      dfs_recursive(graph,node,visited) 
+return visited 
+
+#DFS con stack 
+def df_stack(graph,start): 
+visited= set() 
+stack = [start] 
+
+while stack: 
+node= stack.pop()
+if node not in visited: 
+    stack.extend(reversed(graph[node])):
+return visited 
+
+#revisar si hay ciclo
+
+def has_cycle(graph,node,parent,visited):
+visited.add(node)
+for neighbourgh in graph[node]: 
+  if neighbourgh not in visited: 
+    if has_cycle(graph,neighbour,node,visited): 
+    return True 
+  elif neighbourgh != parent:
+  return True 
+return False
+
+#revisar si hay camino 
+
+def has_path(graph,start,end,visited= None):
+  if visited = None: 
+    visited = set()
+visited.add(start)
+  if start == end: 
+    return True
+for n in graph[node] 
+  if n not in visited: 
+    if has_path(graph,neighbour,end,visited): 
+      return True 
+return False 
